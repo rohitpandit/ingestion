@@ -1,0 +1,21 @@
+{
+  "name": "ingestion-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-Document Intelligence Workbench",
+  "scripts": {
+    "dev": "concurrently -n server,web -c cyan,magenta \"pnpm -F @mdiw/server dev\" \"pnpm -F @mdiw/web dev\"",
+    "build": "pnpm -F @mdiw/shared build && pnpm -F @mdiw/server build && pnpm -F @mdiw/web build",
+    "typecheck": "pnpm -r typecheck",
+    "db:generate": "pnpm -F @mdiw/server db:generate",
+    "db:migrate": "pnpm -F @mdiw/server db:migrate",
+    "samples:generate": "pnpm -F @mdiw/server samples:generate"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
